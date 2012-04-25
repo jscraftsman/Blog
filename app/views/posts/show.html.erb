@@ -1,0 +1,9 @@
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+<small><%= @post.created_at %></small>
+<p>
+<%= link_to "edit", edit_post_path %> | 
+<%= link_to "delete", :action => "delete" %>
+<br />
+<%= link_to "back", :back %>
+</p>

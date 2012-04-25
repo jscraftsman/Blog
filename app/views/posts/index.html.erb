@@ -1,1 +1,15 @@
 <h1>Hello world!</h1>
+<% flash.each do |key, value| %>
+  <%= value %>
+<% end %>
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <p><%= post.content %></p>
+  <p>
+  <%= link_to "Edit", edit_post_path(post) %> | 
+  <%= link_to "Delete", post, :confirm => "Are you sure?", :method => "delete" %>
+  <p/>
+  <hr />
+<% end %>
+
+<p><%= link_to "Add post", new_post_path %>
